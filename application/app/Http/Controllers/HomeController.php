@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
+
 
 class HomeController extends Controller
 {
@@ -28,6 +32,7 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('Models.admin');
+        $users = User::orderBy('id', 'desc')->paginate(100);
+        return view('Models.admin')->with('users', $users);
     }
 }
