@@ -14,7 +14,11 @@ class CreateTanksTable extends Migration
     public function up()
     {
         Schema::create('tanks', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('pass_number');
+            $table->foreign('pass_number')->references('pass_number')->on('users');
+            $table->string('model');
+            $table->string('tank_number')->unique();
             $table->timestamps();
         });
     }

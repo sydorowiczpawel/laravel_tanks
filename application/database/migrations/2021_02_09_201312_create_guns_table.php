@@ -14,7 +14,14 @@ class CreateGunsTable extends Migration
     public function up()
     {
         Schema::create('guns', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('calibre');
+            $table->string('name');
+            $table->string('number');
+            $table->string('pass_number');
+            $table->foreign('pass_number')->references('pass_number')->on('users');
+            $table->string('tank_number');
+            $table->foreign('tank_number')->references('tank_number')->on('tanks');
             $table->timestamps();
         });
     }
