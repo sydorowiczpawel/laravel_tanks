@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    Zalogowany:
+                    <p>ID: {{ Auth::user()->pass_number }}</p>
+                    <p>{{ Auth::user()->rank }} {{ Auth::user()->name }} {{ Auth::user()->surname }}</p>
+                    <p>Pluton {{ Auth::user()->platoon }}</p>
+                    <p>E-mail: {{ Auth::user()->email }}</p>
                 </div>
             </div>
         </div>

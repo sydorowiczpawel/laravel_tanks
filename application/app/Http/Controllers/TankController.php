@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tank;
+use App\Models\Users;
+use Illuminate\Support\Facades\DB;
 
 class TankController extends Controller
 {
@@ -23,7 +26,7 @@ class TankController extends Controller
      */
     public function create()
     {
-        //
+        return view('Models.addTank');
     }
 
     /**
@@ -34,7 +37,20 @@ class TankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pass_number = $request->input('pass_number');
+        $model = $request->input('model');
+        $number = $request->input('tank_number');
+
+        DB::table('tanks')
+            ->insert(
+                [
+                    'pass_number'=>$pass_number,
+                    'model'=>$model,
+                    'tank_number'=>$number
+                ]
+                );
+
+                return redirect('/home');
     }
 
     /**
