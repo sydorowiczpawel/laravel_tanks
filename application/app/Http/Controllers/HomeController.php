@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Documents;
 use Illuminate\Support\Facades\DB;
 
 
@@ -34,5 +35,11 @@ class HomeController extends Controller
     {
         $users = User::orderBy('id', 'desc')->paginate(100);
         return view('Models.admin')->with('users', $users);
+    }
+
+    public function document()
+    {
+        $docs = Documents::orderBy('id', 'desc')->paginate(100);
+        return view('home')->with('docs', $docs);
     }
 }

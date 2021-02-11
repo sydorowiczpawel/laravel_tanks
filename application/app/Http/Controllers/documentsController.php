@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tank;
-use App\Models\User;
+use App\Models\Documents;
 use Illuminate\Support\Facades\DB;
 
-class SoldierController extends Controller
+
+class documentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class SoldierController extends Controller
      */
     public function index()
     {
-        //
+        $docs = Documents::all();
+        return view('/home')->with('docs', $docs);
     }
 
     /**
@@ -26,7 +27,7 @@ class SoldierController extends Controller
      */
     public function create()
     {
-        return view('Models.addSoldier');
+        return view('Models.addDoc');
     }
 
     /**
@@ -39,26 +40,22 @@ class SoldierController extends Controller
     {
         $pass_number = $request->input('pass_number');
         $name = $request->input('name');
-        $surname = $request->input('surname');
-        $rank = $request->input('rank');
-        $platoon = $request->input('platoon');
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $number = $request->input('number');
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
 
-        DB::table("users")
+        DB::table("documents")
         ->insert(
             [
                 'pass_number'=>$pass_number,
                 'name'=>$name,
-                'surname'=>$surname,
-                'rank'=>$rank,
-                'platoon'=>$platoon,
-                'email'=>$email,
-                'password'=>$password
-            ]
+                'number'=>$number,
+                'start_date'=>$start_date,
+                'end_date'=>$end_date
+                ]
             );
 
-            return redirect('/admin');
+            return redirect('/home');
     }
 
     /**
@@ -80,8 +77,8 @@ class SoldierController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('/Models.editSoldier')->with('user', $user);
+        $doc = Documents::find($id);
+        return view('/Models.editDoc')->with('doc', $doc);
     }
 
     /**
@@ -91,33 +88,9 @@ class SoldierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $pass_number = $request->input('pass_number');
-        $name = $request->input('name');
-        $surname = $request->input('surname');
-        $rank = $request->input('rank');
-        $platoon = $request->input('platoon');
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        DB::table("users")
-        ->where(['id' => $id])
-        ->update(
-            [
-                'pass_number'=>$pass_number,
-                'name'=>$name,
-                'surname'=>$surname,
-                'rank'=>$rank,
-                'platoon'=>$platoon,
-                'email'=>$email,
-                'password'=>$password
-            ]
-            );
-
-            return redirect('/admin');
+        //
     }
 
     /**
@@ -128,10 +101,6 @@ class SoldierController extends Controller
      */
     public function destroy($id)
     {
-       $users = DB::table('users')
-        ->where(['id' => $id])
-        ->delete();
-
-            return redirect('/admin');
+        //
     }
 }
