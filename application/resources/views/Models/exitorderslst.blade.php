@@ -28,7 +28,8 @@
         <th></th>
     </tr>
     <tr>
-        <td><a href="/home"><button class="btn btn-primary btn-lg">Powrót</button></a></td>
+        <td><a href="/addexitorder"><button class="btn btn-success btn-lg">Dodaj</button></a>
+        <a href="/home"><button class="btn btn-primary btn-lg">Powrót</button></a></td>
     </tr>
 </table>
 @endsection
