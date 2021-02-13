@@ -83,7 +83,7 @@ class documentsController extends Controller
         DB::table('documents')
         ->where('id', $doc->id)
         ->delete();
-        
+
         return redirect("/doclst");
     }
 }

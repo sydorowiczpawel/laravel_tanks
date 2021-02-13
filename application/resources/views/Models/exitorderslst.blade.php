@@ -28,8 +28,13 @@
         <th></th>
     </tr>
     <tr>
-        <td><a href="/addexitorder"><button class="btn btn-success btn-lg">Dodaj</button></a>
-        <a href="/home"><button class="btn btn-primary btn-lg">Powrót</button></a></td>
+        <td>
+            <div>
+                <a href="/addexitorder"><button type="button" class="btn btn-success">Nowy rozkaz</button></a>
+                <a href="/finishexitorder"><button type="button" class="btn btn-warning">Zakończ rozkaz</button></a>
+                <a href="/home"><button type="button" class="btn btn-primary">Powrót</button></a>
+            </div>
+        </td>
     </tr>
 </table>
 @endsection

@@ -15,7 +15,7 @@ class CreateTanksTable extends Migration
     {
         Schema::create('tanks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('pass_number');
+            $table->string('pass_number')->nullable();
             $table->foreign('pass_number')->references('pass_number')->on('users');
             $table->string('model');
             $table->string('tank_number')->unique();

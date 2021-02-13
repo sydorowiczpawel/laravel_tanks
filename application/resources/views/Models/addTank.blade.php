@@ -5,29 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    Zalogowany:
-                    <p>ID: {{ Auth::user()->pass_number }}</p>
-                    <p>{{ Auth::user()->rank }} {{ Auth::user()->name }} {{ Auth::user()->surname }}</p>
-                    <p>Pluton {{ Auth::user()->platoon }}</p>
-                    <p>E-mail: {{ Auth::user()->email }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
                 <div class="card-header">{{ __('Add a tank') }}</div>
 
                 <div class="card-body">
@@ -38,7 +15,7 @@
                             <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Pass number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number" value="{{ old('pass_number') }}" required autocomplete="pass_number" autofocus>
+                                <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number">
 
                                 @error('pass_number')
                                     <span class="invalid-feedback" role="alert">

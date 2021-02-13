@@ -14,6 +14,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'document']);
 // Admin
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin']);
 // Tank
+Route::get('/tankslst', [App\Http\Controllers\TankController::class, 'index']);
 Route::get('/addTank', [App\Http\Controllers\TankController::class, 'create']);
 Route::post('/tankStore', [App\Http\Controllers\TankController::class, 'store']);
 // Soldier
