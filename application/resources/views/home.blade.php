@@ -15,26 +15,11 @@
                     <div class="col-md-3 col-md-pull-9">{{ Auth::user()->platoon }}</div>
                 </div>
                 @foreach($docs as $doc)
-  <tr>
-    <td>{{$doc -> name }}</td>
-</tr>
-  @endforeach
                 <div class="row">
-                    <div class="col-md-9 col-md-push-3">Kontrakt</div>
-                    <div class="col-md-3 col-md-pull-9">{{$doc->nazwa}}</div>
+                    <div class="col-md-9 col-md-push-3">{{$doc -> name }}</div>
+                    <div class="col-md-3 col-md-pull-9">{{$doc->end_date}}</div>
                 </div>
-                <div class="row">
-                    <div class="col-md-9 col-md-push-3">Badania lekarskie</div>
-                    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9 col-md-push-3">Psychotesty</div>
-                    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9 col-md-push-3">Poświadczenie bezpieczeństwa</div>
-                    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

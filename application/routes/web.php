@@ -23,10 +23,12 @@ Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::clas
 Route::post('/soldierStore', [App\Http\Controllers\SoldierController::class, 'store']);
 Route::delete('/deleteSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'destroy']);
 // Documents
-Route::get('/addDoc', [App\Http\Controllers\documentsController::class, 'create']);
-Route::post('/docStore', [App\Http\Controllers\documentsController::class, 'store']);
+Route::get('/doclst', [App\Http\Controllers\documentsController::class, 'index']);
+Route::get('/adddoc', [App\Http\Controllers\documentsController::class, 'create']);
+Route::post('/docstore', [App\Http\Controllers\documentsController::class, 'store']);
 Route::get('/editdoc/{id}', [App\Http\Controllers\documentsController::class, 'edit']);
 Route::post('/updatedoc/{id}', [App\Http\Controllers\documentsController::class, 'update']);
-Route::delete('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
+Route::get('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
+// Route::delete('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
 
 

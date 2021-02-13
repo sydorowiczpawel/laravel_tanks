@@ -4,7 +4,7 @@
     <a href="/addSoldier"><button>Add a Soldier</button></a>
     <a href="/addTank"><button>Add a Tank</button></a>
 
-    <h2>Lista klientów banku</h2>
+    <h2>26 kompanii zabezpieczenia szkolenia</h2>
 
 <table class="table table-striped">
   <tr>

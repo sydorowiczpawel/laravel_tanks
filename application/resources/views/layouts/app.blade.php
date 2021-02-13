@@ -38,12 +38,14 @@
                             @endif
                         @else
                             <li>
-                                <button class="btn btn-primary" href="/logout" onclick="event.preventDefault()
+                                <button class="btn btn-outline-danger" href="/logout" onclick="event.preventDefault()
                                 document.getElementById('logout-form').submit()">Wyloguj
                                 </button>
                                 <form id="logout-form" action="/logout" method="POST" class="d-none">
                                     @csrf
                                 </form>
+                                <a href="/doclst"><button class="btn btn-light">Edytuj dokument</button></a>
+                                <a href="/addexitorder"><button class="btn btn-light">Dodaj rozkaz wyjazdu</button></a>
                             </li>
                         @endguest
                     </ul>
