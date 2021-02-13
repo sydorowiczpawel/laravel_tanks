@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Edytuj wybrany dokument</h2>
+    <h2>Teczka personalna</h2>
 
 <table class="table table-striped">
     <tr>
@@ -28,7 +28,8 @@
         <th></th>
     </tr>
     <tr>
-        <td><a href="/home"><button class="btn btn-primary btn-lg">Powrót</button></a></td>
+        <td><a href="/adddoc"><button class="btn btn-success btn-lg">Dodaj</button></a>
+        <a href="/home"><button class="btn btn-primary btn-lg">Powrót</button></a></td>
     </tr>
 </table>
 @endsection

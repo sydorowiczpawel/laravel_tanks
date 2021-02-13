@@ -44,8 +44,10 @@
                                 <form id="logout-form" action="/logout" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a href="/doclst"><button class="btn btn-light">Edytuj dokument</button></a>
-                                <a href="/addexitorder"><button class="btn btn-light">Dodaj rozkaz wyjazdu</button></a>
+                                <a href="/doclst"><button class="btn btn-light">Dokumenty</button></a>
+                                <a href="/exitorderslst"><button class="btn btn-light">Rozkazy wyjazdu</button></a>
+                                <a href="/tankslst"><button class="btn btn-light">Czołgi</button></a>
+                                <!-- <a href="/addexitorder"><button class="btn btn-light"></button></a> -->
                             </li>
                         @endguest
                     </ul>

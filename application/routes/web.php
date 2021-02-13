@@ -29,6 +29,10 @@ Route::post('/docstore', [App\Http\Controllers\documentsController::class, 'stor
 Route::get('/editdoc/{id}', [App\Http\Controllers\documentsController::class, 'edit']);
 Route::post('/updatedoc/{id}', [App\Http\Controllers\documentsController::class, 'update']);
 Route::get('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
-// Route::delete('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
-
-
+// Exit orders
+Route::get('/exitorderslst', [App\Http\Controllers\exitOrderController::class, 'index']);
+Route::get('/addexitorder', [App\Http\Controllers\exitOrderController::class, 'create']);
+Route::post('/exitorderstore', [App\Http\Controllers\exitOrderController::class, 'store']);
+Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
+Route::post('/updateexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'update']);
+Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
