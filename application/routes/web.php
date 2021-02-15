@@ -37,3 +37,4 @@ Route::post('/exitorderstore', [App\Http\Controllers\exitOrderController::class,
 Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
 Route::post('/updateexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'update']);
 Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
+Route::get('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);

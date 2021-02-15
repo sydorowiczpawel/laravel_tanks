@@ -22,16 +22,16 @@ class CreateExitOrdersTable extends Migration
             $table->string('series')->unique();
             $table->date('start_date');
             $table->date('end_date');
-            $table->double('km_counter_start');
-            $table->double('km_counter_end')->nullable();
-            $table->double('geh_start');
-            $table->double('geh_end')->nullable();
-            $table->double('leh_start');
-            $table->double('leh_end')->nullable();
+            $table->string('km_counter_start');
+            $table->string('km_counter_end')->nullable();
+            $table->string('geh_start');
+            $table->string('geh_end')->nullable();
+            $table->string('leh_start');
+            $table->string('leh_end')->nullable();
             $table->integer('heater_min')->nullable();
-            $table->integer('7,62mm_ammo')->nullable();
-            $table->integer('12,7mm_ammo')->nullable();
-            $table->integer('125mm_ammo')->nullable();
+            $table->integer('PKT')->nullable();
+            $table->integer('NSWT')->nullable();
+            $table->integer('2A46')->nullable();
             $table->timestamps();
         });
     }

@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="/docstore">
+    <form method="POST" action="/exitorderstore">
     @csrf
 <!-- Type pass_number -->
-        <fieldset disabled>
+        <!-- <fieldset disabled> -->
             <div class="form-group row">
                 <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer przepustki') }}</label>
                 <div class="col-md-6">
@@ -15,7 +15,7 @@
                     @enderror
                 </div>
             </div>
-        </fieldset>
+        <!-- </fieldset> -->
 <!-- Tank tank_number -->
         <div class="form-group row">
             <label for="tank_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer czołgu') }}</label>
