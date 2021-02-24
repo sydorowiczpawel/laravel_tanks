@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Documents;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
@@ -12,17 +13,21 @@ class documentsController extends Controller
     public function index()
     {
         $docs = Documents::all();
-        return view('/Models.doclst')->with('docs', $docs);
+        return view('/home')->with('docs', $docs);
     }
 
     public function create()
     {
-        return view('Models.addDoc');
+        return view('/Models.addDoc');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $pass_number)
     {
-        $pass_number = $request->input('pass_number');
+        // $pass_number = $request->input('pass_number');
+        $pass_number = DB::table('users')
+        ->where('pass_number', $pass_number)
+        ->get();
+
         $name = $request->input('name');
         $number = $request->input('number');
         $start_date = $request->input('start_date');
@@ -42,9 +47,13 @@ class documentsController extends Controller
             return redirect('/doclst');
     }
 
-    public function show($id)
+    public function show($pass_number)
     {
-        //
+        $docs = DB::table('documents')
+        ->where('pass_number', $pass_number)
+        ->get();
+
+        return view('/Models.userDocs')->with('docs', $docs);
     }
 
     public function edit($id)

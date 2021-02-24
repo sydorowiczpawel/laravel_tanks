@@ -14,7 +14,8 @@
     <tr>
         <td>{{$doc -> name }}</td>
         <td>{{$doc -> number }}</td>
-        <td>
+        <td>{{$doc -> start_date}}</td>
+        <td>{{$doc -> end_date}}</td>
 <!-- Edytowanie użytkownika -->
         <a href="/editdoc/{{$doc->id}}"><button class="btn btn-outline-primary btn-lg">Edit</button></a>
 <!-- Usuwanie użytkownika -->

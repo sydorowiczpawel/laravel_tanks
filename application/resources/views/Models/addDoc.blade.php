@@ -6,21 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="/docstore">
+                    <form method="POST" action="/docstore/{Auth::user()->pass_number}">
                         @csrf
-<!-- Type pass number -->
+<!-- Pass number -->
                         <div class="form-group row">
                             <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer przepustki') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number" value="{{ Auth::user()->pass_number }}" required autocomplete="pass_number" autofocus>
-
-                                @error('pass_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ Auth::user()-> pass_number }}</label>
                         </div>
 <!-- Type name -->
                         <div class="form-group row">

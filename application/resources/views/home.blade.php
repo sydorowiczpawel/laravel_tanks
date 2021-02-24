@@ -17,7 +17,7 @@
                 @foreach($docs as $doc)
                 <div class="row">
                     <div class="col-md-9 col-md-push-3">{{$doc -> name }}</div>
-                    <div class="col-md-3 col-md-pull-9">{{$doc->end_date}}</div>
+                    <div class="col-md-3 col-md-pull-9">{{$doc -> end_date}}</div>
                 </div>
                 @endforeach
             </div>

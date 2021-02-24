@@ -6,14 +6,16 @@
 
 <table class="table table-striped">
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Kierowca</th>
+        <th>Model</th>
+        <th>Numer</th>
+        <th>Opcje</th>
     </tr>
     @foreach($tanks as $tank)
     <tr>
-        <td>{{$tank -> name }}</td>
-        <td>{{$tank -> number }}</td>
+        <td>{{$tank -> pass_number }}</td>
+        <td>{{$tank -> model }}</td>
+        <td>{{$tank -> tank_number }}</td>
         <td>
 <!-- Lista rozkazów -->
         <a href="/exitorderslst/{{$tank->number}}"><button class="btn btn-outline-primary btn-lg">Rozkazy</button></a>

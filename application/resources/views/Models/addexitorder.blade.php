@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="/docstore">
+    <form method="POST" action="/exitorderstore">
     @csrf
 <!-- Type pass_number -->
-        <fieldset disabled>
+        <!-- <fieldset disabled> -->
             <div class="form-group row">
                 <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer przepustki') }}</label>
                 <div class="col-md-6">
@@ -15,7 +15,7 @@
                     @enderror
                 </div>
             </div>
-        </fieldset>
+        <!-- </fieldset> -->
 <!-- Tank tank_number -->
         <div class="form-group row">
             <label for="tank_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer czołgu') }}</label>
@@ -56,12 +56,12 @@
                 @enderror
             </div>
         </div>
-<!-- Type km_counter_start-->
+<!-- Type km_start-->
         <div class="form-group row">
-            <label for="km_counter_start" class="col-md-4 col-form-label text-md-right">{{ __('Początkowy licznik kilometrów') }}</label>
+            <label for="km_start" class="col-md-4 col-form-label text-md-right">{{ __('Początkowy licznik kilometrów') }}</label>
             <div class="col-md-6">
-                <input id="km_counter_start" type="text" class="form-control @error('km_counter_start') is-invalid @enderror" name="km_counter_start">
-                @error('km_counter_start')
+                <input id="km_start" type="text" class="form-control @error('km_start') is-invalid @enderror" name="km_start">
+                @error('km_start')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                 @enderror
             </div>

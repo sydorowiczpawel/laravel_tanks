@@ -44,7 +44,7 @@
                                 <form id="logout-form" action="/logout" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a href="/doclst"><button class="btn btn-light">Dokumenty</button></a>
+                                <a href="/userDocs/{{Auth::user()->pass_number}}"><button class="btn btn-light">Dokumenty</button></a>
                                 <a href="/exitorderslst"><button class="btn btn-light">Rozkazy wyjazdu</button></a>
                                 <a href="/tankslst"><button class="btn btn-light">Czołgi</button></a>
                                 <!-- <a href="/addexitorder"><button class="btn btn-light"></button></a> -->
