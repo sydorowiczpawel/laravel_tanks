@@ -27,9 +27,15 @@ class exitOrderController extends Controller
         $series = $request->input('series');
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
+<<<<<<< HEAD
         $km_s = $request->input('km_start');
         $geh_s = $request->input('geh_start');
         $leh_s = $request->input('leh_start');
+=======
+        $km = $request->input('km_counter_start');
+        $og = $request->input('geh_start');
+        $obc = $request->input('leh_start');
+>>>>>>> f2d1457222b4d303e2248a8fb6eae5fb1d56d876
 
         DB::table("exit_orders")
         ->insert(
@@ -39,6 +45,7 @@ class exitOrderController extends Controller
                 'series'=>$series,
                 'start_date'=>$start_date,
                 'end_date'=>$end_date,
+<<<<<<< HEAD
                 'km_start' => $km_s,
                 'geh_start' => $geh_s,
                 'leh_start' => $leh_s,
@@ -46,6 +53,15 @@ class exitOrderController extends Controller
         );
 
         return redirect('/exitorderslst');
+=======
+                'km_counter_start'=>$km,
+                'geh_start'=>$og,
+                'leh_start'=>$obc
+                ]
+            );
+
+            return redirect('/exitorderslst');
+>>>>>>> f2d1457222b4d303e2248a8fb6eae5fb1d56d876
     }
 
     public function show($id)
@@ -64,6 +80,7 @@ class exitOrderController extends Controller
         $eo = ExitOrder::find($id);
         return view('Models.editexitorder')->with('eo', $eo);
     }
+<<<<<<< HEAD
     
     public function update(Request $request, $id)
     {
@@ -98,6 +115,40 @@ class exitOrderController extends Controller
         );
 
         return redirect('/exitorderslst');
+=======
+
+    public function finish($id)
+    {
+        $eo = ExitOrder::find($id);
+        return view('/Models.finishexitorder')->with('eo', $eo);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $eo = ExitOrder::find($id);
+        $km = $request->input('km_counter_end');
+        $geh = $request->input('geh_end');
+        $leh = $request->input('leh_end');
+        $heater = $request->input('heater_min');
+        $pkt = $request->input('PKT');
+        $nswt = $request->input('NSWT');
+        $armata = $request->input('2A46');
+
+        DB::table('exit_orders')
+        ->where('id', $eo->id)
+        ->update(
+            [
+                'km_counter_end'    =>  $km,
+                'geh_end'           =>  $geh,
+                'leh_end'           =>  $leh,
+                'heater_min'        =>  $heater,
+                'PKT'               =>  $pkt,
+                'NSWT'              =>  $nswt,
+                '2A46'              =>  $armata
+            ]
+            );
+            return redirect("/exitorderslst");
+>>>>>>> f2d1457222b4d303e2248a8fb6eae5fb1d56d876
     }
 
     public function destroy($id)

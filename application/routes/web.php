@@ -40,8 +40,14 @@ Route::get('/exitorderslst', [App\Http\Controllers\exitOrderController::class, '
 Route::get('/addexitorder', [App\Http\Controllers\exitOrderController::class, 'create']);
 Route::post('/exitorderstore', [App\Http\Controllers\exitOrderController::class, 'neworder']);
 Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
+<<<<<<< HEAD
 Route::post('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);
 Route::get('/eodetails/{id}', [App\Http\Controllers\exitOrderController::class, 'show']);
 // Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
 // User
 Route::get('userDocs/{pass_number}', [App\Http\Controllers\documentsController::class, 'show']);
+=======
+Route::post('/updateexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'update']);
+Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
+Route::get('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);
+>>>>>>> f2d1457222b4d303e2248a8fb6eae5fb1d56d876
