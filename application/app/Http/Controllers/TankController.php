@@ -35,7 +35,7 @@ class TankController extends Controller
                 ]
                 );
 
-                return redirect('/home');
+                return redirect('/tankslst');
     }
 
     public function show($id)

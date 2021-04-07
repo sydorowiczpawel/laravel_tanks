@@ -24,6 +24,15 @@
                                 @enderror
                             </div>
                         </div>
+<!-- Tank selector -->
+                        <!-- <div class="input-group mb-3">
+                            <label for="model" id="model" name="model" type="text" class="input-group-text" for="inputGroupSelect01">{{ __('Model') }}</label>
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option selected></option>
+                                <option value="1">T-72</option>
+                                <option value="2">PT-91 Twardy</option>
+                            </select>
+                        </div> -->
 <!-- Type tank model -->
                         <div class="form-group row">
                             <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
