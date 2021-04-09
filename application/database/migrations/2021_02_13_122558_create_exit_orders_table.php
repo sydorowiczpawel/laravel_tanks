@@ -22,18 +22,6 @@ class CreateExitOrdersTable extends Migration
             $table->string('series')->unique();
             $table->date('start_date');
             $table->date('end_date');
-<<<<<<< HEAD
-            $table->double('km_start');
-            $table->double('km_end')->nullable();
-            $table->double('geh_start');
-            $table->double('geh_end')->nullable();
-            $table->double('leh_start');
-            $table->double('leh_end')->nullable();
-            $table->integer('heater')->nullable();
-            $table->integer('pkt')->nullable();
-            $table->integer('nswt')->nullable();
-            $table->integer('armata')->nullable();
-=======
             $table->string('km_counter_start');
             $table->string('km_counter_end')->nullable();
             $table->string('geh_start');
@@ -44,7 +32,6 @@ class CreateExitOrdersTable extends Migration
             $table->integer('PKT')->nullable();
             $table->integer('NSWT')->nullable();
             $table->integer('2A46')->nullable();
->>>>>>> f2d1457222b4d303e2248a8fb6eae5fb1d56d876
             $table->timestamps();
         });
     }
