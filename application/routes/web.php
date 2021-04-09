@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\documentsController::class, 'index']);
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'document']);
@@ -16,11 +16,11 @@ Route::get('/admin', [App\Http\Controllers\userController::class, 'index']);
 Route::get('/admin', [App\Http\Controllers\documentsController::class, 'index']);
 Route::get('/admin', [App\Http\Controllers\TankController::class, 'index']);
 // Tank
-Route::get('/tankslst', [App\Http\Controllers\TankController::class, 'index']);
+Route::get('/tankslst/{pass_number}', [App\Http\Controllers\TankController::class, 'index']);
 Route::get('/addTank', [App\Http\Controllers\TankController::class, 'create']);
 Route::get('/editSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'edit']);
 Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'update']);
-Route::post('/tankStore', [App\Http\Controllers\TankController::class, 'store']);
+Route::post('/tankStore/{pass_number}', [App\Http\Controllers\TankController::class, 'store']);
 Route::delete('/deleteSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'destroy']);
 // Soldier
 Route::get('/addSoldier', [App\Http\Controllers\SoldierController::class, 'create']);
@@ -29,9 +29,10 @@ Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::clas
 Route::post('/soldierStore', [App\Http\Controllers\SoldierController::class, 'store']);
 Route::delete('/deleteSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'destroy']);
 // Documents
+Route::get('userDocs/{pass_number}', [App\Http\Controllers\documentsController::class, 'show']);
 Route::get('/doclst', [App\Http\Controllers\documentsController::class, 'index']);
-Route::get('/adddoc', [App\Http\Controllers\documentsController::class, 'create']);
-Route::post('/docstore/{id}', [App\Http\Controllers\documentsController::class, 'store']);
+Route::get('/adddoc/{pass_number}', [App\Http\Controllers\documentsController::class, 'create']);
+Route::post('/docstore/{pass_number}', [App\Http\Controllers\documentsController::class, 'store']);
 Route::get('/editdoc/{id}', [App\Http\Controllers\documentsController::class, 'edit']);
 Route::post('/updatedoc/{id}', [App\Http\Controllers\documentsController::class, 'update']);
 Route::get('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
@@ -45,4 +46,3 @@ Route::post('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::
 Route::get('/eodetails/{id}', [App\Http\Controllers\exitOrderController::class, 'show']);
 // Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
 // User
-Route::get('userDocs/{pass_number}', [App\Http\Controllers\documentsController::class, 'show']);

@@ -21,12 +21,14 @@ class documentsController extends Controller
         return view('/Models.addDoc');
     }
 
-    public function store(Request $request, $pass_number)
+    public function store(Request $request, $p_num)
     {
         // $pass_number = $request->input('pass_number');
-        $pass_number = DB::table('users')
-        ->where('pass_number', $pass_number)
-        ->get();
+        $pass_number = $p_num;
+        // dd($pass_number);
+        // $pass_number = DB::table('users')
+        // ->where('pass_number', $pass_number)
+        // ->get();
 
         $name = $request->input('name');
         $number = $request->input('number');

@@ -45,8 +45,8 @@
                                     @csrf
                                 </form>
                                 <a href="/userDocs/{{Auth::user()->pass_number}}"><button class="btn btn-light">Dokumenty</button></a>
-                                <a href="/allextorders"><button class="btn btn-light">Rozkazy wyjazdu</button></a>
-                                <a href="/tankslst"><button class="btn btn-light">Czołgi</button></a>
+                                <a href="/allextorders/{{Auth::user()->pass_number}}"><button class="btn btn-light">Rozkazy wyjazdu</button></a>
+                                <a href="/tankslst/{{Auth::user()->pass_number}}"><button class="btn btn-light">Czołgi</button></a>
                                 <!-- <a href="/addexitorder"><button class="btn btn-light"></button></a> -->
                             </li>
                         @endguest

@@ -26,7 +26,7 @@
         <th></th>
     </tr>
     <tr>
-        <a href="/adddoc"><button class="btn btn-success">Dodaj dokument</button></a></td>
+        <a href="/adddoc/{{Auth::user()->pass_number}}"><button class="btn btn-success">Dodaj dokument</button></a></td>
         <a href="/home"><button class="btn btn-primary">Powrót</button></a></td>
     </tr>
 </table>

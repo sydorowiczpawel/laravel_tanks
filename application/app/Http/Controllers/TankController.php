@@ -20,9 +20,10 @@ class TankController extends Controller
         return view('Models.addTank');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $p_num)
     {
-        $pass_number = $request->input('pass_number');
+        // $pass_number = $request->input('pass_number');
+        $pass_number = $p_num;
         $model = $request->input('model');
         $number = $request->input('tank_number');
 
@@ -35,7 +36,7 @@ class TankController extends Controller
                 ]
                 );
 
-                return redirect('/tankslst');
+                return redirect('/tankslst/{{Auth::user()->pass_number}}');
     }
 
     public function show($id)
