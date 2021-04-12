@@ -10,20 +10,6 @@
                 <div class="card-body">
                     <form method="POST" action="/tankStore/{{Auth::user()->pass_number}}">
                         @csrf
-<!-- Type pass number -->
-                        {{-- <div class="form-group row">
-                            <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Pass number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number">
-
-                                @error('pass_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
 <!-- Tank selector -->
                         <div class="input-group mb-3">
                             <label for="model" id="model" name="model" type="text" class="input-group-text" for="inputGroupSelect01">{{ __('Model') }}</label>

@@ -14,9 +14,13 @@ class SoldierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($p_num)
     {
-        //
+        $docs = DB::table('documents')
+        ->where('pass_number', $p_num)
+        ->get();
+
+        return view('/Models.personalFile')->with('docs', $docs);
     }
 
     /**

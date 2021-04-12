@@ -6,21 +6,19 @@
 
 <table class="table table-striped">
     <tr>
-        <th>Kierowca</th>
         <th>Model</th>
         <th>Numer</th>
         <th>Opcje</th>
     </tr>
     @foreach($tanks as $tank)
     <tr>
-        <td id="pass_number">{{$tank -> pass_number }}</td>
         <td id="tank_model">{{$tank -> model }}</td>
         <td id="tank_number">{{$tank -> tank_number }}</td>
         <td>
 <!-- Lista rozkazów -->
-        <a href="/selTankOrders/{{$tank->number}}"><button class="btn btn-outline-primary btn-lg">Rozkazy</button></a>
+        <a href="/selTankOrders/{{$tank->tank_number}}"><button class="btn btn-outline-primary btn-lg">Rozkazy</button></a>
 <!-- Lista obsług -->
-        <a href="/deletedoc/{{$tank->number}}"><button class="btn btn-outline-warning btn-lg">Obsługi</button></a>
+        <a href="/deletedoc/{{$tank->tank_number}}"><button class="btn btn-outline-warning btn-lg">Obsługi</button></a>
         </td>
     </tr>
     @endforeach

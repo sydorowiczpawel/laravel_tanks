@@ -2,19 +2,8 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="/exitorderstore">
+    <form method="POST" action="/exitorderstore/{{ Auth::user()->pass_number}}">
     @csrf
-<!-- Type pass_number -->
-        <!-- <fieldset disabled> -->
-            <div class="form-group row">
-                <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer przepustki') }}</label>
-                <div class="col-md-6">
-                    <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number" value="{{ Auth::user()->pass_number }}">
-                    @error('pass_number')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
-                </div>
-            </div>
         <!-- </fieldset> -->
 <!-- Tank tank_number -->
         <div class="form-group row">
