@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>{{ $tank}}</h2>
-
+@foreach($tank as $element)
+<h2>{{ $element -> model }} {{ $element -> tank_number }}</h2>
+@endforeach
 <table class="table table-hover table-bordered">
 	<thead>
     <tr>
-        <th>Pojazd</th>
         <th>Seria/Numer</th>
         <th>km - po użyciu</th>
         <th>mtg OG - po użyciu</th>
@@ -15,17 +15,18 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($eos as $eo)
+  @foreach($tank as $element)
     <tr>
-        <td>{{$eo -> tank_number }}</td>
-        <td>{{$eo -> series }}</td>
-        <td>{{$eo -> km_end }}</td>
-        <td>{{$eo -> geh_end }}</td>
-        <td>{{$eo -> leh_end }}</td>
+@endforeach
+@foreach($orders as $order)
+        <td>{{$order -> series }}</td>
+        <td>{{$order -> km_counter_end }}</td>
+        <td>{{$order -> geh_end }}</td>
+        <td>{{$order -> leh_end }}</td>
         <td>
 <!-- Edycja rozkazu wyjazdu -->
-        <a href="/editexitorder/{{$eo->id}}"><button type="button" class="btn btn-warning">Zakończ rozkaz</button></a>
-        <a href="/eodetails/{{$eo->id}}"><button class="btn btn-outline-primary">Szczegóły</button></a>
+        <a href="/editexitorder/{{$order->id}}"><button type="button" class="btn btn-warning">Zakończ rozkaz</button></a>
+        <a href="/eodetails/{{$order->id}}"><button class="btn btn-outline-primary">Szczegóły</button></a>
         </td>
     </tr>
   @endforeach

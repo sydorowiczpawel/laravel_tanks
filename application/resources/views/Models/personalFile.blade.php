@@ -13,7 +13,7 @@
 			@foreach($docs as $doc)
       <tr>
         <td>{{$doc -> name }}</td>
-        <td>{{$doc -> end_date}}</td> 
+        <td>ważne do {{$doc -> end_date}}</td> 
 			</tr>
 			@endforeach
     </tbody>

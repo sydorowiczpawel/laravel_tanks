@@ -18,7 +18,7 @@
 <!-- Lista rozkazów -->
         <a href="/selTankOrders/{{$tank->tank_number}}"><button class="btn btn-outline-primary btn-lg">Rozkazy</button></a>
 <!-- Lista obsług -->
-        <a href="/deletedoc/{{$tank->tank_number}}"><button class="btn btn-outline-warning btn-lg">Obsługi</button></a>
+        <a href="/deletedoc/{{$tank->tank_number}}"><button class="btn btn-outline-warning btn-lg">Delete??</button></a>
         </td>
     </tr>
     @endforeach

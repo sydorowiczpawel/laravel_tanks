@@ -62,8 +62,15 @@ class exitOrderController extends Controller
     }
 
     public function showSelected($tank_number) {
-        $tank = Tank::all();
-        return view('/Models.selTankOrders')->with('tank', $tank);
+        $tank = DB::table('tanks')
+        ->where('tank_number', $tank_number)
+        ->get();
+
+        $orders = DB::table('exit_orders')
+        ->where('tank_number', $tank_number)
+        ->get();
+
+        return view('/Models.selTankOrders')->with('tank', $tank)->with('orders', $orders);
 
         // $eos = ExitOrder::all();
         // return view('/Models.selTankOrders')->with('eos', $eos);

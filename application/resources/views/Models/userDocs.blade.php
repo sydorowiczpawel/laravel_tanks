@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Twoje dokumentu</h2>
+    <h2>Twoje dokumenty</h2>
 
 <table class="table table-striped">
     <tr>
