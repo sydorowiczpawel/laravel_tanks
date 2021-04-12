@@ -21,9 +21,9 @@ class exitOrderController extends Controller
         return view('Models.addexitorder');
     }
 
-    public function neworder(Request $request)
+    public function neworder(Request $request, $p_num)
     {
-        $pass_number = $request->input('pass_number');
+        $pass_number = $p_num;
         $tank_number = $request->input('tank_number');
         $series = $request->input('series');
         $start_date = $request->input('start_date');
@@ -39,13 +39,13 @@ class exitOrderController extends Controller
                 'series'=>$series,
                 'start_date'=>$start_date,
                 'end_date'=>$end_date,
-                'km_start' => $km_s,
+                'km_counter_start' => $km_s,
                 'geh_start' => $geh_s,
                 'leh_start' => $leh_s,
             ]
         );
 
-        return redirect('/exitorderslst');
+        return redirect('/home');
     }
 
     public function show($id)
@@ -98,17 +98,17 @@ class exitOrderController extends Controller
         ->where('id', $id)
         ->update(
             [
-                'km_end' => $km_e,
+                'km_counter_end' => $km_e,
                 'geh_end' => $geh_e,
                 'leh_end' => $leh_e,
-                'heater' => $heater,
+                'heater_min' => $heater,
                 'pkt' => $pkt,
                 'nswt' => $nswt,
                 'armata' => $armata
             ]
         );
 
-        return redirect('/exitorderslst');
+        return redirect('/home');
     }
 
     public function destroy($id)

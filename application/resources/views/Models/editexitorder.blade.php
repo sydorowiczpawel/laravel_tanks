@@ -8,7 +8,7 @@
                         <div class="form-group row">
                             <label for="km_end" class="col-md-4 col-form-label text-md-right">{{ __('Licznik kilometrów przed wyjazdem') }}</label>
                             <div class="col-md-6">
-                            <label for="km_end" class="col-md-4 col-form-label text-md-right">{{$eo -> km_start}}</label>
+                            <label for="km_end" class="col-md-4 col-form-label text-md-right">{{$eo -> km_counter_start}}</label>
                             </div>
                         </div>
 <!-- Type km_counter_end-->

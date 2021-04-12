@@ -31,7 +31,7 @@ class CreateExitOrdersTable extends Migration
             $table->integer('heater_min')->nullable();
             $table->integer('PKT')->nullable();
             $table->integer('NSWT')->nullable();
-            $table->integer('2A46')->nullable();
+            $table->integer('armata')->nullable();
             $table->timestamps();
         });
     }

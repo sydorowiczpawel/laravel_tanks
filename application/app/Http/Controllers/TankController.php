@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class TankController extends Controller
 {
-    public function index()
+    public function index($p_num)
     {
-        $tanks = Tank::all();
+        $tanks = DB::table('tanks')
+        ->where('pass_number', $p_num)
+        ->get();
+
         return view('Models.tankslst')->with('tanks', $tanks);
     }
 
@@ -22,7 +25,6 @@ class TankController extends Controller
 
     public function store(Request $request, $p_num)
     {
-        // $pass_number = $request->input('pass_number');
         $pass_number = $p_num;
         $model = $request->input('model');
         $number = $request->input('tank_number');

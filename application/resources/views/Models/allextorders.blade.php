@@ -24,7 +24,7 @@
     <tr>
         <td>{{$eo -> tank_number }}</td>
         <td>{{$eo -> series }}</td>
-        <td>{{$eo -> km_end }}</td>
+        <td>{{$eo -> km_counter_end }}</td>
         <td>{{$eo -> geh_end }}</td>
         <td>{{$eo -> leh_end }}</td>
         <td>

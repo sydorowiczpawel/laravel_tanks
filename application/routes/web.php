@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\documentsController::class, 'index']);
+Route::get('/home/', [App\Http\Controllers\documentsController::class, 'index']);
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'document']);
 
 // Admin
@@ -23,6 +23,7 @@ Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::clas
 Route::post('/tankStore/{pass_number}', [App\Http\Controllers\TankController::class, 'store']);
 Route::delete('/deleteSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'destroy']);
 // Soldier
+Route::get('/personalFile/{pass_number}', [App\Http\Controllers\SoldierController::class, 'index']);
 Route::get('/addSoldier', [App\Http\Controllers\SoldierController::class, 'create']);
 Route::get('/editSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'edit']);
 Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'update']);
@@ -37,10 +38,10 @@ Route::get('/editdoc/{id}', [App\Http\Controllers\documentsController::class, 'e
 Route::post('/updatedoc/{id}', [App\Http\Controllers\documentsController::class, 'update']);
 Route::get('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 'destroy']);
 // Exit orders
-Route::get('/allextorders', [App\Http\Controllers\exitOrderController::class, 'index']);
+Route::get('/allextorders/{pass_number}', [App\Http\Controllers\exitOrderController::class, 'index']);
 Route::get('/selTankOrders/{tank_number}', [App\Http\Controllers\exitOrderController::class, 'showSelected']);
 Route::get('/addexitorder', [App\Http\Controllers\exitOrderController::class, 'create']);
-Route::post('/exitorderstore', [App\Http\Controllers\exitOrderController::class, 'neworder']);
+Route::post('/exitorderstore/{pass_number}', [App\Http\Controllers\exitOrderController::class, 'neworder']);
 Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
 Route::post('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);
 Route::get('/eodetails/{id}', [App\Http\Controllers\exitOrderController::class, 'show']);
