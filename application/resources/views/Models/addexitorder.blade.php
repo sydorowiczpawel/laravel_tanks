@@ -2,19 +2,20 @@
 
 @section('content')
 <div class="container">
-    <form method="POST" action="/exitorderstore/{{ Auth::user()->pass_number}}">
-    @csrf
-        <!-- </fieldset> -->
-<!-- Tank tank_number -->
-        <div class="form-group row">
-            <label for="tank_number" class="col-md-4 col-form-label text-md-right">{{ __('Numer czołgu') }}</label>
-            <div class="col-md-6">
-                <input id="tank_number" type="text" class="form-control @error('tank_number') is-invalid @enderror" name="tank_number">
-                @error('tank_number')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                @enderror
-            </div>
-        </div>
+	<form method="POST" action="/exitorderstore/{{ Auth::user()->pass_number}}">
+		@csrf
+		<!-- </fieldset> -->
+		<!-- Tank tank_number -->
+		<div class="form-group row">
+			<label for="tank_number" class="col-md-4 col-form-label text-md-right">{{ __('Tank number') }}</label>
+			<div class="col-md-6">
+        <select id="tank_number" name="tank_number" type="text" class="form-control" >
+					@foreach ($tanks as $tank)
+						<option>{{ $tank -> tank_number }}</option>
+					@endforeach
+        </select>
+      </div>
+		</div>
 <!-- Type series -->
         <div class="form-group row">
             <label for="series" class="col-md-4 col-form-label text-md-right">{{ __('Seria i numer rozkazu') }}</label>

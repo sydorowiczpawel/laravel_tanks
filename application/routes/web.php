@@ -40,7 +40,7 @@ Route::get('/deletedoc/{id}', [App\Http\Controllers\documentsController::class, 
 // Exit orders
 Route::get('/allextorders/{pass_number}', [App\Http\Controllers\exitOrderController::class, 'index']);
 Route::get('/selTankOrders/{tank_number}', [App\Http\Controllers\exitOrderController::class, 'showSelected']);
-Route::get('/addexitorder', [App\Http\Controllers\exitOrderController::class, 'create']);
+Route::get('/addexitorder/{pass_number}', [App\Http\Controllers\exitOrderController::class, 'create']);
 Route::post('/exitorderstore/{pass_number}', [App\Http\Controllers\exitOrderController::class, 'neworder']);
 Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
 Route::post('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);

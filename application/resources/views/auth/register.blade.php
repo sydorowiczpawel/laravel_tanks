@@ -1,29 +1,26 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">{{ __('Register') }}</div>
+          <div class="card-body">
+            <form class="form group form-sm" method="POST" action="{{ route('register') }}">
+              @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 <!-- Type pass number -->
-                        <div class="form-group row">
-                            <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Pass number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number" value="{{ old('pass_number') }}" required autocomplete="pass_number" autofocus>
-
-                                @error('pass_number')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+              <div class="form-group row">
+                <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Pass number') }}</label>
+                <div class="col-md-6">
+                  <input id="pass_number" type="text" class="form-control @error('pass_number') is-invalid @enderror" name="pass_number" value="{{ old('pass_number') }}" required autocomplete="pass_number" autofocus>
+                  @error('pass_number')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
+              </div>
 <!-- Type name -->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -53,33 +50,53 @@
                             </div>
                         </div>
 <!-- Type rank -->
-                        <div class="form-group row">
-                            <label for="rank" class="col-md-4 col-form-label text-md-right">{{ __('Rank') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="rank" type="text" class="form-control @error('rank') is-invalid @enderror" name="rank" value="{{ old('rank') }}" required autocomplete="rank" autofocus>
-
-                                @error('rank')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+              <div class="form-group row">
+                <label for="rank" class="col-md-4 col-form-label text-md-right">{{ __('Rank') }}</label>
+								<div class="col-md-6">
+                	<select id="rank" type="text" class="form-control" @error('rank') is-invalid @enderror" name="rank" value="{{ old('rank') }}" required autocomplete="rank" autofocus>
+                  	<option>szer.</option>
+                  	<option>st. szer.</option>
+                  	<option>kpr.</option>
+                  	<option>st. kpr.</option>
+                  	<option>plut.</option>
+                		<option>st. plut.</option>
+                  	<option>sierż.</option>
+                  	<option>st. sierż.</option>
+                  	<option>mł. chor.</option>
+                    <option>chor.</option>
+                  	<option>st. chor.</option>
+                    <option>st. chor. sztab.</option>
+                  	<option>ppor.</option>
+                  	<option>por.</option>
+                  	<option>kpt.</option>
+                  	<option>mjr.</option>
+                  	<option>ppłk.</option>
+                  	<option>płk.</option>
+                	</select>
+									@error('rank')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
+							</div>
 <!-- Type platoon -->
-                        <div class="form-group row">
-                            <label for="platoon" class="col-md-4 col-form-label text-md-right">{{ __('Platoon') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="platoon" type="text" class="form-control @error('platoon') is-invalid @enderror" name="platoon" value="{{ old('platoon') }}" required autocomplete="platoon" autofocus>
-
-                                @error('platoon')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<div class="form-group row">
+	<label for="platoon" class="col-md-4 col-form-label text-md-right">{{ __('Rank') }}</label>
+	<div class="col-md-6">
+		<select id="rank" type="text" class="form-control" @error('platoon') is-invalid @enderror" name="platoon" value="{{ old('platoon') }}" required autocomplete="platoon" autofocus>
+			<option>I</option>
+			<option>II</option>
+			<option>III</option>
+			<option>IV</option>
+		</select>
+		@error('platoon')
+			<span class="invalid-feedback" role="alert">
+				<strong>{{ $message }}</strong>
+			</span>
+		@enderror
+	</div>
+</div>
 <!-- Type e-mail -->
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

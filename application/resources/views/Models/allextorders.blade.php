@@ -43,7 +43,7 @@
     <tr>
         <td>
             <div>
-                <a href="/addexitorder"><button type="button" class="btn btn-success">Nowy rozkaz</button></a>
+                <a href="/addexitorder/{{ Auth::user() -> pass_number}}"><button type="button" class="btn btn-success">Nowy rozkaz</button></a>
                 <a href="/home"><button type="button" class="btn btn-primary">Powrót</button></a>
             </div>
         </td>

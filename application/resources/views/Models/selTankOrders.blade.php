@@ -39,7 +39,9 @@
     <tr>
         <td>
             <div>
-                <a href="/addexitorder"><button type="button" class="btn btn-success">Nowy rozkaz</button></a>
+                @foreach ($tank as $element)
+                <a href="/addexitorder/{{ $element -> tank_number }}"><button type="button" class="btn btn-success">Nowy rozkaz</button></a>
+                @endforeach
                 <a href="/home"><button type="button" class="btn btn-primary">Powrót</button></a>
             </div>
         </td>
