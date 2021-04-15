@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
 	<h2>Pojazdy użytkownika {{ Auth::user() -> rank}} {{ Auth::user() -> name}} {{ Auth::user() -> surname}}</h2>
 
