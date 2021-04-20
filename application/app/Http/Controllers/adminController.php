@@ -5,22 +5,87 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Documents;
 use App\Models\Tank;
+use App\Models\User;
 use App\Models\Gun;
 use App\Models\ExitOrder;
+use Illuminate\Support\Facades\DB;
+
 
 class adminController extends Controller
 {
+    public function structure() {
+
+        $commander = DB::table('users')
+        ->where('function', 'dowódca kompanii')
+        ->get();
+
+        // dd($commander);
+
+        $boss = DB::table('users')
+        ->where('function', 'szef kompanii')
+        ->get();
+
+        $technician = DB::table('users')
+        ->where('function', 'technik kompanii')
+        ->get();
+
+        $gun_technician = DB::table('users')
+        ->where('function', 'technik uzbrojenia')
+        ->get();
+
+        $p1c = DB::table('users')
+        ->where('function', 'dowódca plutonu I')
+        ->get();
+
+        $p1 = DB::table('users')
+        ->where('platoon', 'I')
+        ->get();
+
+        $p2 = DB::table('users')
+        ->where('platoon', 'II')
+        ->get();
+
+        $p3 = DB::table('users')
+        ->where('platoon', 'III')
+        ->get();
+
+        $p4 = DB::table('users')
+        ->where('platoon', 'IV')
+        ->get();
+
+        return view('Models.admin')
+        ->with('commander', $commander)
+        ->with('boss', $boss)
+        ->with('technician', $technician)
+        ->with('gun_technician', $gun_technician)
+        ->with('p1c', $p1c)
+        ->with('p1', $p1)
+        ->with('p2', $p2)
+        ->with('p3', $p3)
+        ->with('p4', $p4);
+    }
+
+    public function allUsers() {
+
+        // $users = DB::table('users')
+        $users = User::orderBy('surname')
+        -> get();
+
+        // dd($users);
+
+        return view('Models.a_soldiers') -> with('users', $users);
+    }
 
     public function allDocs()
     {
         $docs = Documents::orderBy('id', 'desc')->paginate(100);
-        return view('Models.admin')->with('docs', $docs);
+        return view('Models.a_documents')->with('docs', $docs);
     }
 
     public function allTanks()
     {
         $tanks = Tank::orderBy('id', 'desc')->paginate(100);
-        return view('Models.admin')->with('tanks', $tanks);
+        return view('Models.a_tanks')->with('tanks', $tanks);
     }
 
     public function addSoldier()

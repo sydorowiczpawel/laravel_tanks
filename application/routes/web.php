@@ -8,13 +8,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home/', [App\Http\Controllers\documentsController::class, 'index']);
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'document']);
+Route::get('/home', function () {
+    return view('home');
+});
 
 // Admin
-Route::get('/admin', [App\Http\Controllers\userController::class, 'index']);
-Route::get('/admin', [App\Http\Controllers\documentsController::class, 'index']);
-Route::get('/admin', [App\Http\Controllers\TankController::class, 'index']);
+Route::get('/admin', [App\Http\Controllers\adminController::class, 'structure']);
+Route::get('/a_docs', [App\Http\Controllers\adminController::class, 'allDocs']);
+Route::get('/a_soldiers', [App\Http\Controllers\adminController::class, 'allUsers']);
+Route::get('/a_tanks', [App\Http\Controllers\adminController::class, 'allTanks']);
 // Tank
 Route::get('/tankslst/{pass_number}', [App\Http\Controllers\TankController::class, 'index']);
 Route::get('/addTank', [App\Http\Controllers\TankController::class, 'create']);
@@ -45,5 +47,4 @@ Route::post('/exitorderstore/{pass_number}', [App\Http\Controllers\exitOrderCont
 Route::get('/editexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'edit']);
 Route::post('/finishexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'finish']);
 Route::get('/eodetails/{id}', [App\Http\Controllers\exitOrderController::class, 'show']);
-// Route::get('/deleteexitorder/{id}', [App\Http\Controllers\exitOrderController::class, 'destroy']);
 // User

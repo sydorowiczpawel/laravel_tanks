@@ -38,7 +38,8 @@ class TankController extends Controller
                 ]
                 );
 
-                return redirect('/tankslst/{{Auth::user()->pass_number}}');
+                // return redirect('/tankslst/{{Auth::user()->pass_number}}');
+                return redirect('/admin');
     }
 
     public function show($id)

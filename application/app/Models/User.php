@@ -19,6 +19,7 @@ class User extends Authenticatable
         'platoon',
         'email',
         'password',
+        'function',
     ];
 
     protected $hidden = [

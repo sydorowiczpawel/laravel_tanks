@@ -51,6 +51,9 @@
                 <a href="/userDocs/{{Auth::user()->pass_number}}"><button class="btn btn-light">Dokumenty</button></a>
                 <a href="/allextorders/{{Auth::user()->pass_number}}"><button class="btn btn-light">Rozkazy wyjazdu</button></a>
                 <a href="/tankslst/{{Auth::user()->pass_number}}"><button class="btn btn-light">Czołgi</button></a>
+                @if((Auth::user()->pass_number) === "AA001")
+                  <a href="/admin"><button class="btn btn-warning">Admin</button></a>
+                @endif
               </li>
             @endguest
             </ul>

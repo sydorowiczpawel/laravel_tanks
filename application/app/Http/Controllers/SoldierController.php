@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tank;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -42,9 +41,10 @@ class SoldierController extends Controller
     public function store(Request $request)
     {
         $pass_number = $request->input('pass_number');
+        $rank = $request->input('rank');
         $name = $request->input('name');
         $surname = $request->input('surname');
-        $rank = $request->input('rank');
+        $function = $request->input('function');
         $platoon = $request->input('platoon');
         $email = $request->input('email');
         $password = $request->input('password');
@@ -53,9 +53,10 @@ class SoldierController extends Controller
         ->insert(
             [
                 'pass_number'=>$pass_number,
+                'rank'=>$rank,
                 'name'=>$name,
                 'surname'=>$surname,
-                'rank'=>$rank,
+                'function'=>$function,
                 'platoon'=>$platoon,
                 'email'=>$email,
                 'password'=>$password
