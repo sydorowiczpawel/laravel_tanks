@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
-    public function structure() {
+    public function index() {
+        return view ('Models.admin');
+    }
+
+    public function all_soldiers() {
 
         $commander = DB::table('users')
         ->where('function', 'dowódca kompanii')
@@ -21,6 +25,7 @@ class adminController extends Controller
 
         // dd($commander);
 
+        // Kadra kierownicza
         $boss = DB::table('users')
         ->where('function', 'szef kompanii')
         ->get();
@@ -33,47 +38,113 @@ class adminController extends Controller
         ->where('function', 'technik uzbrojenia')
         ->get();
 
-        $p1c = DB::table('users')
-        ->where('function', 'dowódca plutonu I')
-        ->get();
-
-        $p1 = DB::table('users')
+        // Pluton I
+        $p1_c = DB::table('users')
+        ->where('function', 'dowódca plutonu')
         ->where('platoon', 'I')
         ->get();
 
-        $p2 = DB::table('users')
+        $p1_pdp= DB::table('users')
+        ->where('platoon', 'I')
+        ->where ('function', 'pomocnik dowódcy plutonu')
+        ->get();
+
+        $p1_od= DB::table('users')
+        ->where('platoon', 'I')
+        ->where ('function', 'kierowca - starszy instruktor')
+        ->get();
+
+        $p1_d= DB::table('users')
+        ->where('platoon', 'I')
+        ->where ('function', 'kierowca')
+        ->get();
+
+        // Pluton II
+        $p2_c = DB::table('users')
+        ->where('function', 'dowódca plutonu')
         ->where('platoon', 'II')
         ->get();
 
-        $p3 = DB::table('users')
+        $p2_pdp= DB::table('users')
+        ->where('platoon', 'II')
+        ->where ('function', 'pomocnik dowódcy plutonu')
+        ->get();
+
+        $p2_od= DB::table('users')
+        ->where('platoon', 'II')
+        ->where ('function', 'kierowca - starszy instruktor')
+        ->get();
+
+        $p2_d= DB::table('users')
+        ->where('platoon', 'II')
+        ->where ('function', 'kierowca')
+        ->get();
+
+        // Pluton III
+        $p3_c = DB::table('users')
+        ->where('function', 'dowódca plutonu')
         ->where('platoon', 'III')
         ->get();
 
-        $p4 = DB::table('users')
+        $p3_pdp= DB::table('users')
+        ->where('platoon', 'III')
+        ->where ('function', 'pomocnik dowódcy plutonu')
+        ->get();
+
+        $p3_od= DB::table('users')
+        ->where('platoon', 'III')
+        ->where ('function', 'kierowca - starszy instruktor')
+        ->get();
+
+        $p3_d= DB::table('users')
+        ->where('platoon', 'III')
+        ->where ('function', 'kierowca')
+        ->get();
+
+        // Pluton IV
+        $p4_c = DB::table('users')
+        ->where('function', 'dowódca plutonu')
         ->where('platoon', 'IV')
         ->get();
 
-        return view('Models.admin')
+        $p4_pdp= DB::table('users')
+        ->where('platoon', 'IV')
+        ->where ('function', 'pomocnik dowódcy plutonu')
+        ->get();
+
+        $p4_od= DB::table('users')
+        ->where('platoon', 'IV')
+        ->where ('function', 'kierowca - starszy instruktor')
+        ->get();
+
+        $p4_d= DB::table('users')
+        ->where('platoon', 'IV')
+        ->where ('function', 'kierowca')
+        ->get();
+
+
+        return view('Models.a_soldiers')
         ->with('commander', $commander)
         ->with('boss', $boss)
         ->with('technician', $technician)
         ->with('gun_technician', $gun_technician)
-        ->with('p1c', $p1c)
-        ->with('p1', $p1)
-        ->with('p2', $p2)
-        ->with('p3', $p3)
-        ->with('p4', $p4);
-    }
-
-    public function allUsers() {
-
-        // $users = DB::table('users')
-        $users = User::orderBy('surname')
-        -> get();
-
-        // dd($users);
-
-        return view('Models.a_soldiers') -> with('users', $users);
+        ->with('p1_c', $p1_c)
+        ->with('p1_pdp', $p1_pdp)
+        ->with('p1_od', $p1_od)
+        ->with('p1_d', $p1_d)
+        ->with('p2_c', $p2_c)
+        ->with('p2_pdp', $p2_pdp)
+        ->with('p2_od', $p2_od)
+        ->with('p2_d', $p2_d)
+        ->with('p3_c', $p3_c)
+        ->with('p3_pdp', $p3_pdp)
+        ->with('p3_od', $p3_od)
+        ->with('p3_d', $p3_d)
+        ->with('p4_c', $p4_c)
+        ->with('p4_pdp', $p4_pdp)
+        ->with('p4_od', $p4_od)
+        ->with('p4_d', $p4_d)
+        ;
     }
 
     public function allDocs()

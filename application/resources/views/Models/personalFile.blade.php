@@ -5,8 +5,10 @@
 	<table class="table table-sm">
     <thead class="table-dark">
       <tr>
-        <th>{{ Auth::user()->rank }} {{ Auth::user()->name }} {{ Auth::user()->surname }}</th>
-        <th>przepustka nr. {{ Auth::user()->pass_number }}</th>
+        @foreach($user as $object)
+        <th>{{ $object -> rank }} {{ $object -> name }} {{ $object -> surname }} </th>
+        @endforeach
+        <th>przepustka nr. {{ $object -> pass_number }} </th>
         <th>
           <?php
           echo date("l ") . date("d-m-Y");

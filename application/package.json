@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bootstrap-icons": "^1.4.1",
         "cross": "^1.0.0",
         "cross-env": "^7.0.3"
     }

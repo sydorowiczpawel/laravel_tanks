@@ -15,11 +15,17 @@ class SoldierController extends Controller
      */
     public function index($p_num)
     {
+        $user = DB::table('users')
+        ->where('pass_number', $p_num)
+        ->get();
+
         $docs = DB::table('documents')
         ->where('pass_number', $p_num)
         ->get();
 
-        return view('/Models.personalFile')->with('docs', $docs);
+        return view('/Models.personalFile')
+        ->with('docs', $docs)
+        ->with('user', $user);
     }
 
     /**
