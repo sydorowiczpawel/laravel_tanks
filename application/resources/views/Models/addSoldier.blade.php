@@ -82,12 +82,11 @@
                     <option>-- wybierz z listy --</option>
                     <option>dowódca kompanii</option>
                     <option>szef kompanii</option>
-                    <option>dowódca plutonu I</option>
-                    <option>dowódca plutonu II</option>
-                    <option>dowódca plutonu III</option>
-                    <option>dowódca plutonu IV</option>
                     <option>technik kompanii</option>
                     <option>technik uzbrojenia</option>
+                    <option>dowódca plutonu</option>
+                    <option>pomocnik dowódcy plutonu</option>
+                    <option>kierowca - starszy instruktor</option>
                     <option>kierowca</option>
                   </select>
 

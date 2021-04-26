@@ -69,7 +69,7 @@ class SoldierController extends Controller
             ]
             );
 
-            return redirect('/admin');
+            return redirect('/a_soldiers');
     }
 
     /**
@@ -105,30 +105,31 @@ class SoldierController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $pass_number = $request->input('pass_number');
-        $name = $request->input('name');
-        $surname = $request->input('surname');
-        $rank = $request->input('rank');
-        $platoon = $request->input('platoon');
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $p_num = $request->input('pass_number');
+        $r = $request->input('rank');
+        $n = $request->input('name');
+        $s = $request->input('surname');
+        $f = $request->input('function');
+        $p = $request->input('platoon');
+        $e = $request->input('email');
+        $pswd = $request->input('password');
 
-        DB::table("users")
-        ->where(['id' => $id])
+        DB::table('users')
+        ->where('id', $id)
         ->update(
             [
-                'pass_number'=>$pass_number,
-                'name'=>$name,
-                'surname'=>$surname,
-                'rank'=>$rank,
-                'platoon'=>$platoon,
-                'email'=>$email,
-                'password'=>$password
+                'pass_number'=>$p_num,
+                'rank'=>$r,
+                'name'=>$n,
+                'surname'=>$s,
+                'function' => $f,
+                'platoon'=>$p,
+                'email'=>$e,
+                'password'=>$pswd
             ]
             );
 
-            return redirect('/admin');
+            return redirect('/a_soldiers');
     }
 
     /**
