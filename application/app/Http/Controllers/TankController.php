@@ -20,7 +20,12 @@ class TankController extends Controller
 
     public function create()
     {
-        return view('Models.addTank');
+        $soldier = DB::table('users')
+        ->orderBy('surname')
+        ->get();
+
+        return view('Models.addTank')
+        ->with('soldier', $soldier);
     }
 
     public function store(Request $request, $p_num)
@@ -28,6 +33,7 @@ class TankController extends Controller
         $pass_number = $p_num;
         $model = $request->input('model');
         $number = $request->input('tank_number');
+        $driver = $request->input('tutaj bedzie wywalac blad bo program chce numer przepustki a dostaje nazwisko kierowcy')
 
         DB::table('tanks')
             ->insert(
@@ -38,8 +44,7 @@ class TankController extends Controller
                 ]
                 );
 
-                // return redirect('/tankslst/{{Auth::user()->pass_number}}');
-                return redirect('/admin');
+                return redirect('/a_tanks');
     }
 
     public function show($id)

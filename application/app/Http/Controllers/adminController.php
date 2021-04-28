@@ -155,8 +155,10 @@ class adminController extends Controller
 
     public function allTanks()
     {
-        $tanks = Tank::orderBy('id', 'desc')->paginate(100);
-        return view('Models.a_tanks')->with('tanks', $tanks);
+        $tanks = Tank::orderBy('id', 'desc');
+
+        return view('Models.a_tanks')
+        ->with('tanks', $tanks);
     }
 
     public function addSoldier()
@@ -222,3 +224,5 @@ class adminController extends Controller
             return redirect('/admin');
     }
 }
+
+

@@ -2,12 +2,10 @@
 
 @section('content')
 <div class="container">
-  <div class="d-grid gap-2">
-    <a href="a_soldiers"><button class="button btn-primary" type="button">Soldiers</button></a>
-    <a href=""><button class="button btn-primary btn-sm">Tanks</button></a>
-    <a href=""><button class="button btn-primary btn-sm">Documents</button></a>
-    {{-- <a href="/addSoldier"><button>Add a Soldier</button></a> --}}
-    {{-- <a href="/addTank"><button>Add a Tank</button></a> --}}
+  <div>
+    <a href="/a_soldiers"><button class="btn btn-outline-warning btn-sm" type="button">Soldiers</button></a>
+    <a href="/a_tanks"><button class="btn btn-outline-warning btn-sm">Tanks</button></a>
+    <a href="/a_documents"><button class="btn btn-outline-warning btn-sm">Documents</button></a>
   </div>
 </div>
 @endsection
