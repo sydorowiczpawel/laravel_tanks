@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="container">
+  {{-- tabela z dokumentami --}}
 	<table class="table table-sm">
     <thead class="table-dark">
       <tr>
@@ -31,6 +32,25 @@
         <td>upływa za {{$days}} dni</td>
         @endforeach
 			</tr>
+    </tbody>
+  </table>
+  {{-- Tabela z czołgami --}}
+  <table class="table table-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>nr. pojazdu</th>
+        <th>licznik km</th>
+        <th>mtgOG</th>
+        <th>mtgOBC</th>
+        <th>OO-1</th>
+        <th>OO-2</th>
+        <th>wymiana oleju</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>tu też</td>
+      </tr>
     </tbody>
   </table>
 </div>

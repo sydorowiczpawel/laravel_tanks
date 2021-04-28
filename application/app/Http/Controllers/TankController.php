@@ -33,7 +33,7 @@ class TankController extends Controller
         $pass_number = $p_num;
         $model = $request->input('model');
         $number = $request->input('tank_number');
-        $driver = $request->input('tutaj bedzie wywalac blad bo program chce numer przepustki a dostaje nazwisko kierowcy')
+        $driver = $request->input('tutaj bedzie wywalac blad bo program chce numer przepustki a dostaje nazwisko kierowcy');
 
         DB::table('tanks')
             ->insert(

@@ -14,7 +14,7 @@ Route::get('/home', function () {
 
 // Admin
 Route::get('/admin', [App\Http\Controllers\adminController::class, 'index']);
-Route::get('/a_docs', [App\Http\Controllers\adminController::class, 'allDocs']);
+Route::get('/a_documents', [App\Http\Controllers\adminController::class, 'allDocs']);
 Route::get('/a_soldiers', [App\Http\Controllers\adminController::class, 'all_soldiers']);
 Route::get('/a_tanks', [App\Http\Controllers\adminController::class, 'allTanks']);
 // Tank

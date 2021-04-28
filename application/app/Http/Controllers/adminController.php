@@ -149,7 +149,11 @@ class adminController extends Controller
 
     public function allDocs()
     {
-        $docs = Documents::orderBy('id', 'desc')->paginate(100);
+        $docs = DB::table('documents')
+        ->orderBy('end_date', 'asc')
+        ->get();
+
+        // $docs = Documents::orderBy('end_date', 'desc');
         return view('Models.a_documents')->with('docs', $docs);
     }
 

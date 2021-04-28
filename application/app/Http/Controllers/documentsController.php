@@ -46,13 +46,14 @@ class documentsController extends Controller
                 ]
             );
 
-            return redirect('/doclst');
+						return redirect('/home');
     }
 
     public function show($pass_number)
     {
         $docs = DB::table('documents')
         ->where('pass_number', $pass_number)
+        ->orderBy('end_date', 'asc')
         ->get();
 
         return view('/Models.userDocs')->with('docs', $docs);
