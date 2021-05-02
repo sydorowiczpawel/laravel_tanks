@@ -159,7 +159,9 @@ class adminController extends Controller
 
     public function allTanks()
     {
-        $tanks = Tank::orderBy('id', 'desc');
+        $tanks = DB::table('tanks')
+        ->orderBy('model')
+        ->get();
 
         return view('Models.a_tanks')
         ->with('tanks', $tanks);

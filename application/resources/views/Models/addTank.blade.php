@@ -11,7 +11,7 @@
 						@csrf
 						<!-- Type tank model -->
 						<div class="form-group row">
-              <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
+							<label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
 							<div class="col-md-6">
 								<select id="model" name="model" type="text" class="form-control" >
 									<option>T-72</option>
@@ -33,11 +33,11 @@
 
 						<!-- Type a driver -->
 						<div class="form-group row">
-              <label for="driver" class="col-md-4 col-form-label text-md-right">{{ __('Driver') }}</label>
+              <label for="pass_number" class="col-md-4 col-form-label text-md-right">{{ __('Pass number') }}</label>
 							<div class="col-md-6">
-                <select id="driver" name="driver" type="text" class="form-control">
+                <select id="pass_number" name="pass_number" type="text" class="form-control">
 									@foreach($soldier as $object)
-									<option>{{ $object -> surname }}</option>
+									<option>{{ $object -> pass_number }}</option>
 									@endforeach
 								</select>
               </div>

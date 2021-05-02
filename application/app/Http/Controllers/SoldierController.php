@@ -19,13 +19,24 @@ class SoldierController extends Controller
         ->where('pass_number', $p_num)
         ->get();
 
+        $tanks = DB::table('tanks')
+        ->where('pass_number', $p_num)
+        ->get();
+
         $docs = DB::table('documents')
         ->where('pass_number', $p_num)
         ->get();
 
+        $eos = DB::table('exit_orders')
+        ->where('pass_number', $p_num)
+        ->orderBy('end_date', 'desc')
+        ->get();
+
         return view('/Models.personalFile')
         ->with('docs', $docs)
-        ->with('user', $user);
+        ->with('eos', $eos)
+        ->with('user', $user)
+        ->with('tanks', $tanks);
     }
 
     /**

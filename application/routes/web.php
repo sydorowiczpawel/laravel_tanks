@@ -26,6 +26,7 @@ Route::post('/tankStore/{pass_number}', [App\Http\Controllers\TankController::cl
 Route::delete('/deleteSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'destroy']);
 // Soldier
 Route::get('/personalFile/{pass_number}', [App\Http\Controllers\SoldierController::class, 'index']);
+// Route::get('/personalFile/{pass_number}', [App\Http\Controllers\TankController::class, 'show']);
 Route::get('/addSoldier', [App\Http\Controllers\SoldierController::class, 'create']);
 Route::get('/editSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'edit']);
 Route::post('/updateSoldier/{id}', [App\Http\Controllers\SoldierController::class, 'update']);
