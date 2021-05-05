@@ -78,7 +78,6 @@
   <div>
     <button type="submit" class="btn btn-success btn-sm">{{ __('Dodaj') }}</button>
     </form>
-		<a href="/tankslst/{{ Auth::user() -> pass_number }}"><button class="btn btn-primary btn-sm">{{ __('Powrót') }}</button></a>
 	</div>
 </div>
 @endsection

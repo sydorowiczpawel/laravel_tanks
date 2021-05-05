@@ -47,7 +47,7 @@ class documentsController extends Controller
 	{
 		$docs = DB::table('documents')
 		->where('pass_number', $pass_number)
-		->orderBy('end_date', 'asc')
+		->orderBy('end_date', 'desc')
 		->get();
 
 		return view('/Models.userDocs')->with('docs', $docs);

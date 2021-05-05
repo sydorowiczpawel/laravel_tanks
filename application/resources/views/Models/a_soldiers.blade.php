@@ -14,14 +14,17 @@
   </div>
 
   <table class="table table-striped table-hover">
+    <thead class="table-dark">
     <tr>
       <th>nr. przepustki</th>
-      <th>stopień imie i Nazwisko</th>
+      <th>stopień Imię i Nazwisko</th>
       <th>funkcja</th>
-      <th>Pluton</th>
-      <th>Action</th>
+      <th>pluton</th>
+      <th></th>
     </tr>
+  </thead>
     {{-- Dowódca kompanii --}}
+    <tbody>
     @foreach($commander as $object)
     <tr>
       <td>{{ $object -> pass_number }}</td>
@@ -144,8 +147,10 @@
         </button>
       </td>
     </tr>
+    </tbody>
     @endforeach
     {{-- Pluton I --}}
+  <tbody>
     {{-- dowódca plutonu --}}
     @foreach($p1_c as $object)
     <tr>
@@ -269,6 +274,8 @@
         </button>
       </td>
     </tr>
+  </tbody>
+  <tbody>
     @endforeach
     {{-- Pluton II --}}
     {{-- dowódca plutonu --}}
@@ -395,6 +402,8 @@
       </td>
     </tr>
     @endforeach
+  </tbody>
+  <tbody>
     {{-- Pluton III --}}
     {{-- dowódca plutonu --}}
     @foreach($p3_c as $object)
@@ -520,6 +529,8 @@
       </td>
     </tr>
     @endforeach
+  </tbody>
+  <tbody>
     {{-- Pluton IV --}}
     {{-- Dowódca plutonu --}}
     @foreach($p4_c as $object)
@@ -645,6 +656,7 @@
       </td>
     </tr>
     @endforeach
+  </tbody>
     {{-- dodaj nowego żołnierza --}}
     <tr>
       <td></td>

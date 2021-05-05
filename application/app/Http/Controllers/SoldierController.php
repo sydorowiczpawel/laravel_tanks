@@ -25,6 +25,7 @@ class SoldierController extends Controller
 
         $docs = DB::table('documents')
         ->where('pass_number', $p_num)
+        ->orderBy('end_date', 'desc')
         ->get();
 
         $eos = DB::table('exit_orders')
