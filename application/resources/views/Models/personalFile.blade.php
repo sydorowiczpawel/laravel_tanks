@@ -12,7 +12,21 @@
         <th>przepustka nr. {{ $object -> pass_number }} </th>
         <th>
           <?php
-          echo date("l ") . date("d-m-Y");
+          if(date("l") == "Monday"){
+          echo "Poniedziałek " . date("d-m-Y") . " r.";
+          } elseif (date("l") == "Tuesday") {
+            echo "Wtorek " . date("d-m-Y") . " r.";
+          } elseif (date("l") == "Wednesday") {
+            echo "Środa " . date("d-m-Y") . " r.";
+          } elseif (date("l") == "Thursday") {
+            echo "Czwartek " . date("d-m-Y") . " r.";
+          } elseif (date("l") == "Friday") {
+            echo "Piątek " . date("d-m-Y") . " r.";
+          } elseif (date("l") == "Saturday") {
+            echo "Sobota " . date("d-m-Y") . " r.";
+          } else {
+            echo "Niedziela " . date("d-m-Y") . " r.";
+          }
           ?>
           </th>
 			</tr>
